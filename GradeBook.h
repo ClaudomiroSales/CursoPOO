@@ -10,7 +10,11 @@ using std::string;
 class GradeBook
 {
 public:
-    //GradeBook();
+    
+    GradeBook( string name )
+    {
+        setCourseName( name );
+    }
     //~GradeBook();
 
     void setCourseName( string name )

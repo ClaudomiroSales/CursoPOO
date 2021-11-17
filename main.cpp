@@ -14,16 +14,15 @@ using std::getline;
 int main()
 {
    
-   GradeBook gradebook;
-   string nameOfCourse;
+   GradeBook gradebook1( "Math" );
+   GradeBook gradebook2( "Physics" );
+   
+   
+   gradebook1.displayMessage( );
+   gradebook2.displayMessage( );
 
-   cout << "Digite o nome do curso: ";
-   getline( cin, nameOfCourse );
-   gradebook.setCourseName( nameOfCourse );
-
-
-   gradebook.displayMessage( );
-
+   cout << "Os cursos sao: " << gradebook1.getCourseName( ) << " e " << gradebook2.getCourseName( ) << '\n';
+   
    
    return 0;
 }
