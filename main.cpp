@@ -2,16 +2,19 @@
 * Multiple line
 * comment
 */
-#include<iostream>
-
 //Single line comment
+#include<iostream>
 using std::cout;
+
+#include "GradeBook.h"
 
 //This is where the execution of program begins
 int main()
 {
-   // displays Hello World! on screen
-   cout << "Hello World!\n";
+   
+   GradeBook gradebook;
+
+   gradebook.displayMessage( );
 
    
    return 0;
