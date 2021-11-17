@@ -4,16 +4,33 @@
 #include <iostream>
 using std::cout;
 
+#include <string>
+using std::string;
+
 class GradeBook
 {
 public:
     //GradeBook();
     //~GradeBook();
 
+    void setCourseName( string name )
+    {
+        courseName = name;
+    }
+
+    string getCourseName(  )
+    {
+        return courseName;
+    }
+
     void displayMessage( ) const
     {
-        cout << "Welcome to the Grade Book";
+        cout << "Welcome to the Grade Book for course " << courseName << '\n';
     }
+
+private:
+
+    string courseName;
 
 };
 
