@@ -21,7 +21,7 @@ private:
 
     string courseName;
 
-    const int maxSizeName = 7;
+    const int MAXSIZENAME = 7;
 
 };
 
