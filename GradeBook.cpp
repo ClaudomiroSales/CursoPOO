@@ -15,7 +15,13 @@ GradeBook::GradeBook( string name )
 
  void GradeBook::setCourseName( string name )
 {
-    courseName = name;
+    if ( name.length( ) < maxSizeName )
+        courseName = name;
+    else   
+        {
+            courseName = name.substr( 0, maxSizeName );
+            cout << "Nome alterado. Excedeu o valor máximo. \n";
+        }
 }
 
 string GradeBook::getCourseName( )

@@ -21,6 +21,8 @@ private:
 
     string courseName;
 
+    const int maxSizeName = 7;
+
 };
 
 #endif // GRADEBOOK_H
