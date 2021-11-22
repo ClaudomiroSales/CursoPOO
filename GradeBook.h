@@ -9,17 +9,17 @@ class GradeBook
 public:
 
     GradeBook ( );    
-    GradeBook( double );
+    GradeBook( string );
     
-    //void setCourseName( string );
+    void setCourseName( string );
 
-    //string getCourseName( );
+    string getCourseName( );
 
-    //void displayMessage( );
+    void displayMessage( );
 
 private:
 
-    double courseName;
+    string courseName;
 
 };
 
