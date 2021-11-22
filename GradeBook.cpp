@@ -4,24 +4,39 @@
 using std::cout;
 
 GradeBook::GradeBook( )
-{
-    courseName = "";
+:courseName(""), numAlunos( 0 )
+{  
 }
 
-GradeBook::GradeBook( string name )
+GradeBook::GradeBook( string name, int numAlunos )
 {
     setCourseName( name );
+    setNumAlunos( numAlunos );
+}
+
+GradeBook::GradeBook( int numAlunos )
+:courseName("")
+{
+    setNumAlunos( numAlunos );
 }
 
  void GradeBook::setCourseName( string name )
 {
-    if ( name.length( ) < MAXSIZENAME )
+    if ( name.length( ) <= MAXSIZENAME )
         courseName = name;
     else   
         {
             courseName = name.substr( 0, MAXSIZENAME );
             cout << "Nome alterado. Excedeu o valor maximo. \n";
         }
+}
+
+void GradeBook::setNumAlunos( int numAlunos )
+{
+    if ( numAlunos > 0 )
+        this->numAlunos = numAlunos;
+    else
+        this->numAlunos = 0;
 }
 
 string GradeBook::getCourseName( )
@@ -31,5 +46,11 @@ string GradeBook::getCourseName( )
 
 void GradeBook::displayMessage( ) 
 {
-     cout << "Welcome to the Grade Book for course " << courseName << '\n';
+    if( courseName.size( ) > 0 )
+        cout << "Welcome to the Grade Book for course " << courseName << '.';          
+    else
+        cout << "Welcome to the Grade Book. Curso sem nome.";
+
+    cout << " A Turma tem " << numAlunos << " aluno.\n";  
+
 }
