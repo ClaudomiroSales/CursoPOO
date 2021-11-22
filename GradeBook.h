@@ -11,6 +11,7 @@ public:
     GradeBook ( );    
     GradeBook( string , int = 0 );
     GradeBook( int );
+    GradeBook( const GradeBook & );
     
     void setCourseName( string );
     
@@ -26,7 +27,7 @@ private:
 
     int numAlunos;
 
-    const int MAXSIZENAME = 9;
+    const int MAXSIZENAME;
 
 };
 

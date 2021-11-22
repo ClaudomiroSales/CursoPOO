@@ -4,21 +4,35 @@
 using std::cout;
 
 GradeBook::GradeBook( )
-:courseName(""), numAlunos( 0 )
+:courseName(""), numAlunos( 0 ), MAXSIZENAME( 9 )
 {  
 }
 
 GradeBook::GradeBook( string name, int numAlunos )
+:MAXSIZENAME( 9 )
 {
     setCourseName( name );
     setNumAlunos( numAlunos );
 }
 
 GradeBook::GradeBook( int numAlunos )
-:courseName("")
+:courseName(""), MAXSIZENAME( 9 )
 {
     setNumAlunos( numAlunos );
 }
+
+GradeBook::GradeBook( const GradeBook& other )
+:MAXSIZENAME( other.MAXSIZENAME )
+{
+    this->courseName = other.courseName;
+    this->numAlunos  = other.numAlunos;
+}
+
+/* GradeBook::GradeBook( const GradeBook& other )
+:courseName( other.courseName ), numAlunos( other.numAlunos )
+{
+    
+} */
 
  void GradeBook::setCourseName( string name )
 {
