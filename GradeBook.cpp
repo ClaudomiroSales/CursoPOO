@@ -20,7 +20,7 @@ GradeBook::GradeBook( string name )
     else   
         {
             courseName = name.substr( 0, maxSizeName );
-            cout << "Nome alterado. Excedeu o valor máximo. \n";
+            cout << "Nome alterado. Excedeu o valor maximo. \n";
         }
 }
 
