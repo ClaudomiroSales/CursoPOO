@@ -19,15 +19,15 @@ public:
 
     string getCourseName( );
 
-    void displayMessage( );
+    void displayMessage( bool = true ) const;
+    void displayMessage( bool = true );
 
 private:
 
     string courseName;
-
     int numAlunos;
-
     const int MAXSIZENAME;
+    bool check;
 
 };
 

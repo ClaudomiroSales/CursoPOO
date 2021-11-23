@@ -10,19 +10,22 @@ int main()
 
    GradeBook gradebook0;
    GradeBook gradebook1( "Math" );
-   GradeBook gradebook2( "Physicssfdsfdsfgsdfgsdfgsdfgdsfgsdfgsdfgsdfgsdfdsfgsdfgfsadgf" );
+   const GradeBook GRADEBOOK2( "Physicssfdsfdsfgsdfgsdfgsdfgdsfgsdfgsdfgsdfgsdfdsfgsdfgfsadgf" );
    GradeBook gradebook3( "Geography", 10 );
    GradeBook gradebook4( 20 );
 
    //cout << "\n\n";
 
    //Constructor de cópia
-   GradeBook gradebook5( gradebook2 );
+   const GradeBook GRADEBOOK5( GRADEBOOK2 );
    
-   cout << "Usando o constructor de copia: GradeBook gradebook5( gradebook2 ); \n";
-   cout << "O gradebook5 eh copia do grandebook2.\n";
-   gradebook2.displayMessage( );
-   gradebook5.displayMessage( );
+   cout << "\nDuas versões do método displayMessage: const e não const\n";
+   GRADEBOOK2.displayMessage( );
+   GRADEBOOK5.displayMessage( );
+   gradebook3.displayMessage( );//Objects não const podem usar métodos const
+
+   //ERROR: tentando usar método não const
+   //GRADEBOOK5.setNumAlunos( 10 );
 
    return 0;
 }
