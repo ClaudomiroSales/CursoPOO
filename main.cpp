@@ -28,6 +28,15 @@ int main()
    cout << "Alunos que conseguiram vaga na escola " << GradeBook::getnumAlunosEscola( ) << '\n';
    cout << "Numero de GradeBooks instanciados: " << GradeBook::getnumGradeBooks( ) << '\n';
    cout << "Numero de GradeBooks instanciados: " << gradebook0.getnumGradeBooks( ) << '\n';
+
+   gradebook0.printListaAlunos( );
+
+   cout << "\nUsando arrays. Fornecendo e imprimindo notas.\n";
+   const int NGRADES = 5;
+   double grandes[ NGRADES ] = { 10.0, 8.9, 9.3, 7.8, 6.6 };
+
+   gradebook3.fornecerNotas( grandes, NGRADES );
+   gradebook3.printGrades( );
    
    return 0;
 }

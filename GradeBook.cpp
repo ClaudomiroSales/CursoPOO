@@ -7,7 +7,7 @@ using std::cout;
 int GradeBook::numGradeBooks = 0;
 int GradeBook::numAlunosEscola = 0;
 const int GradeBook::MAXNUMALUNOSESCOLA = 20;
-
+string GradeBook::alunos[ NUMALUNOSMIN ] = {"Carlos Fernando", "Andreza Raphaela"};
 
 
 GradeBook::GradeBook( )
@@ -120,4 +120,23 @@ void GradeBook::displayMessage( bool check )
         cout << " A Turma tem " << numAlunos << " aluno.\n";  
     }
 
+}
+
+void GradeBook::printListaAlunos( ) const
+{
+    for( int i = 0; i < NUMALUNOSMIN; i++ )
+        cout << alunos[ i ] << '\n';
+}
+
+void GradeBook::fornecerNotas( double grades[ ], int ngrades )
+{
+    if( NGRADES <= ngrades )
+        for( int i = 0; i < NGRADES; i++ )
+            this->grades[ i ] = grades[ i ]; 
+}
+
+void GradeBook::printGrades( ) const
+{
+    for( int i = 0; i < NGRADES; i++ )
+        cout << this->grades[ i ] << '\n';
 }

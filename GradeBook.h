@@ -22,8 +22,15 @@ public:
     void displayMessage( bool = true ) const;
     void displayMessage( bool = true );
 
+    //Métodos const não podem ser statics
+    void printListaAlunos(  ) const;
+
     inline static int getnumGradeBooks( )   { return numGradeBooks; }
     inline static int getnumAlunosEscola( ) { return numAlunosEscola; }
+
+    void fornecerNotas( double [ ], int );
+
+    void printGrades( ) const;
 
 private:
 
@@ -36,6 +43,17 @@ private:
     //static int numGradeBooks = 0;
 
     static int numAlunosEscola;
+
+    //Error check: uma referência a um membro não estático deve ser relativa ao objeto específico C/C++(245)
+    //const int NUMALUNOSMIN = 2;
+    //static string alunos[ NUMALUNOSMIN ];
+
+    //Sem erro
+    static const int NUMALUNOSMIN = 2;
+    static string alunos[ NUMALUNOSMIN ];
+
+    static const int NGRADES = 5;
+    double grades[ NGRADES ];
 
     //Pode inicializar aqui ou no cpp
     //const static int MAXNUMALUNOSESCOLA = 100;
