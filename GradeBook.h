@@ -22,8 +22,8 @@ public:
     void displayMessage( bool = true ) const;
     void displayMessage( bool = true );
 
-    inline int getnumGradeBooks( ) { return numGradeBooks; }
-    inline int getnumAlunosEscola( ) { return numAlunosEscola; }
+    inline static int getnumGradeBooks( )   { return numGradeBooks; }
+    inline static int getnumAlunosEscola( ) { return numAlunosEscola; }
 
 private:
 
