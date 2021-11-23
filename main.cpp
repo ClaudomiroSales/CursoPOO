@@ -24,7 +24,7 @@ int main()
    //GRADEBOOK5.setNumAlunos( 10 );
 
    //Variável pertence a classe
-   cout << "\nTestando atributos e métodos statics.\n";
+   cout << "\nTestando atributos e metodos statics.\n";
    cout << "Alunos que conseguiram vaga na escola " << GradeBook::getnumAlunosEscola( ) << '\n';
    cout << "Numero de GradeBooks instanciados: " << GradeBook::getnumGradeBooks( ) << '\n';
    cout << "Numero de GradeBooks instanciados: " << gradebook0.getnumGradeBooks( ) << '\n';
