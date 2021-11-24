@@ -12,10 +12,10 @@ using std::string;
 class SmartPhone
 {
 public:
-	SmartPhone();
+	SmartPhone( );
 	SmartPhone(const SmartPhone &);
 	SmartPhone(int, const Data & = Data(25,9,2014));
-	~SmartPhone();
+	~SmartPhone( );
 	
 	//A static member function cannot be declared with the keywords virtual, const, volatile, or const volatile.
 	static void mostrarInfo( );
