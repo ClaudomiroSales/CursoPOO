@@ -5,36 +5,38 @@ using std::cout;
 
 int SmartPhone::numPhones = 0;
 
+const Data SmartPhone::RELEASEDATE = Data( 25, 9, 2021 );
 
-const Data SmartPhone::RELEASEDATE = Data(25,9,2014);
-
-SmartPhone::SmartPhone()
+SmartPhone::SmartPhone( )
 :pinCode(0), IDPHONE( 12345 ), dataAtual( )
 {
-	numPhones++;
-	cout << "A quantidade de smartphones criados eh " << numPhones << '\n';
+	numPhones++;	
 }
 
-SmartPhone::SmartPhone(const SmartPhone &sp)
+SmartPhone::SmartPhone( int IDPh, const Data &dataOut )
+:IDPHONE(IDPh), dataAtual(dataOut)
+{
+	numPhones++;	
+}
+
+SmartPhone::SmartPhone( const SmartPhone &sp )
 :pinCode(sp.pinCode), IDPHONE(sp.IDPHONE), dataAtual(sp.dataAtual)
 {
 	history = sp.history;
-	cout << "Quantidade de paginas visisitadas " << history.size() << '\n';
-	listHistory( );
 	numPhones++;
-	cout << "A quantidade de smartphones criados eh " << numPhones << '\n';
+	
+	//Update contact list
+	contacts.resize( sp.contacts.size( ) );
+	for( int i = 0; i < contacts.size( ); i++ )
+		contacts[ i ] = new Pessoa( *sp.contacts[ i ] );//deferenciar o ponteiro. Contacts é um vector de Pessoas
+
 }
 
-
-SmartPhone::SmartPhone(int IDPh, const Data &dataOut)
-:IDPHONE(IDPh), dataAtual(dataOut)
+SmartPhone::~SmartPhone( )
 {
-	numPhones++;
-	cout << "A quantidade de smartphones criados eh " << numPhones << '\n';
-}
 
-SmartPhone::~SmartPhone()
-{
+	for( int i = 0; i < contacts.size( ); i++ )
+		delete contacts[ i ];
 
 }
 
@@ -47,12 +49,10 @@ void SmartPhone::mostrarInfo( )
 		 
 }
 
-
 void SmartPhone::updateHistory(const string &newPage)
 {
 	history.push_back( newPage );
 }
-
 
 void SmartPhone::listHistory( ) const
 {
@@ -65,4 +65,27 @@ void SmartPhone::mostrarData( ) const
 {
 	cout << "A data atual eh: "; dataAtual.print( );	
 	cout << '\n';
+}
+
+void SmartPhone::printContactList( ) const
+{
+	cout << "Minha lista de contatos eh:\n\n";
+	for( int i = 0; i < contacts.size( ); i++ )
+		cout << *contacts[ i ] << '\n';
+}
+
+void SmartPhone::addContact( const Pessoa &newcontact )
+{
+	contacts.push_back( new Pessoa( newcontact ) );	
+}
+
+void SmartPhone::addContact( const string &name, const string &phoneNumber, const vector< string > &socialMediaConection )
+{
+	contacts.push_back( new Pessoa( name, phoneNumber, socialMediaConection ) );	
+}
+
+void SmartPhone::deleteLastContact( )
+{
+	delete contacts[ contacts.size() - 1 ];
+	contacts.pop_back( );
 }
