@@ -14,7 +14,7 @@ using std::cout;
 int main()
 {
 
-   SmartPhone sp1( 132323, Data(30,9,2014) );
+   SmartPhone sp1( 132323, Data( 30, 9, 2021 ) );
 
    SmartPhone::mostrarInfo( );
    sp1.mostrarData( );
