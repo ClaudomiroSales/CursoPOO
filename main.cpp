@@ -3,15 +3,21 @@
 * comment
 */
 #include<iostream>
-
-//Single line comment
 using std::cout;
 
-//This is where the execution of program begins
+#include "SmartPhone.h"
+#include "SmartPhone.cpp"
+#include "Data.h"
+#include "Data.cpp"
+
+
 int main()
 {
-   // displays Hello World! on screen
-   cout << "Hello World!\n";
+
+   SmartPhone sp1( 132323, Data(30,9,2014) );
+
+   SmartPhone::mostrarInfo( );
+   sp1.mostrarData( );
 
    
    return 0;

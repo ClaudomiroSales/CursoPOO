@@ -36,7 +36,7 @@ private:
 	
 	const static Data RELEASEDATE;
 	
-	vector<string> history;
+	vector< string > history;
 	
 	Data dataAtual;
 
