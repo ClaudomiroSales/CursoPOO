@@ -16,6 +16,9 @@ int main()
 
    gradebook.displayMessage( );
 
+   GradeBook g1;
+
+   g1.displayMessage( );
    
    return 0;
 }
